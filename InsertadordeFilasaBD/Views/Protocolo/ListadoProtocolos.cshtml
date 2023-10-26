@@ -1,0 +1,55 @@
+﻿@model List<InsertadordeFilasaBD.Models.Protocolo>
+
+<h1>Protocolos</h1>
+
+<p>
+    <a asp-action="crear" class="btn btn-primary text-white">Insertar protocolo</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                Id Protocolo
+            </th>
+            <th>
+                Producto
+            </th>
+            <th>
+                Nombre Documento
+            </th>
+            <th>
+                Lote
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var protocolos in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => protocolos.Idprotocolo)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => protocolos.IdproductoNavigation.Nameproduct)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => protocolos.Namedocument)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => protocolos.Lote)
+                </td>
+                <td>
+                    <a asp-controller="Protocolo" asp-action="Descargar" asp-route-id="@protocolos.Idprotocolo" class="btn btn-outline-success">Descargar Archivo</a>
+                </td>
+                <td>
+                    <a asp-controller="" asp-action="" asp-route-id="@protocolos.Idprotocolo" class="btn btn-outline-info">Actualizar</a>
+                </td>
+                <td>
+                    <a asp-controller="" asp-action="" asp-route-id="@protocolos.Idprotocolo" class="btn btn-outline-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

@@ -1,0 +1,38 @@
+﻿@model List<Producto>
+
+<h1>Productos</h1>
+<p>
+    <a class="btn btn-outline-info" asp-action="Create">Crear Producto</a>
+</p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                ID Producto
+            </th>
+            <th>
+                Nombre
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var producto in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m=>producto.Idproducto)
+                </td>
+                <td>
+                    @Html.DisplayFor(m=>producto.Nameproduct)
+                </td>
+                <td>
+                   <a asp-action="" asp-controller="" asp-route-id="" class="btn btn-outline-primary">Actulizar</a>
+                </td>
+                <td>
+                    <a asp-action="" asp-controller="" asp-route-id="" class="btn btn-outline-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

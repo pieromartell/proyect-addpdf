@@ -1,0 +1,28 @@
+﻿@using InsertadordeFilasaBD.Models.ViewModel
+@model ProtocoloViewModel
+@{
+    ViewData["Title"] = "crear";
+}
+
+<h1>Crear Protocolo</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Create" class="form-control" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Lote" class="control-label" ></label>
+                    <input asp-for="Lote" class="form-control"type="text"/>
+                </div>
+                <div class="form-group">
+                    <label  class="control-label"></label>
+                    <input  name="file" class="form-control" type="file" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Idproducto"></label>
+                    <select asp-for="Idproducto" class="form-select" asp-items="ViewBag.Productos"></select>
+                </div>
+                <button class="btn btn-outline-primary" type="submit" value="Crear">Crear</button>
+            </form>
+        </div>
+    </div>
+</div>
